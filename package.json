@@ -36,7 +36,7 @@
     "electrum-theme": "^4.6.1",
     "electrum-trace": "^1.1.2",
     "electrum-utils": "^1.6.7",
-    "radium": "^0.18.2",
+    "radium": "^0.26.0",
     "react": "^15.4.2",
     "react-addons-shallow-compare": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
