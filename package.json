@@ -9,11 +9,12 @@
     "compile": "npm run clean && require-self && npm run eslint && npm run regen && npm run babel",
     "eslint": "eslint src src.test",
     "rebuild": "npm run regen && npm run babel",
-    "prepublish": "npm run compile",
+    "prepublish": "npm run snyk-protect && npm run compile",
     "regen": "electrum-require-components --wrap ./src exp .component.js all-components.js",
     "test": "npm run compile && mocha --harmony lib.test/**/*.js",
     "watch": "chokidar \"src/**/*.js\" -i \"src/all-components.js\" -c \"npm run rebuild\"",
-    "startcraft": "npm run clean && npm run regen && npm run babel"
+    "startcraft": "npm run clean && npm run regen && npm run babel",
+    "snyk-protect": "snyk protect"
   },
   "repository": {
     "type": "git",
@@ -40,12 +41,14 @@
     "react": "^15.4.2",
     "react-addons-shallow-compare": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-env": "^2.4.0",
     "chokidar-cli": "^1.2.0",
     "generic-js-env": "^2.2.4",
     "mai-chai": "^3.3.2"
-  }
+  },
+  "snyk": true
 }
